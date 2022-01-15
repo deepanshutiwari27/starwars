@@ -1,59 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Starwars</title>
+    <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <style>
-        body{
-            background-color: #00334C;
-        }
-        .logo{
-            text-align: center;
-        }
-        .font{
-            font-family: 'Roboto', sans-serif;
-            color: #FFFFFF;
-        }
-        .data{
-            padding-left: 170px;
-        }
-        .parent {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 50px;
-        grid-row-gap: 0px;
-        }
-
-
-        .div1 { 
-            grid-area: 1 / 1 / 2 / 2; 
-        }
-        .div2 { 
-            grid-area: 1 / 2 / 2 / 3;
-            padding-left: 170px;
-        }
-        .photo{
-            padding-top: 10px;
-            height: 490px;
-        }
-        .center{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .btn1{
-            /* display: flex;; */
-            height: 80px;
-            width: 240px;
-            background-color: #16a38c;
-            font-weight: bold;
-            font-size: 30px;
-            border-radius: 10px;
-            /* justify-content: center; */
-            /* align-items: center; */
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="logo">
@@ -80,23 +30,6 @@
     </button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $(".btn1").on("click",function(){
-                var num = Math.ceil(Math.random()*88)
-                $.get(`https://akabab.github.io/starwars-api/api/id/${num}.json`,function(data){
-                    $(".name").text(`Name: ${data["name"]}`)
-                    $(".home").text(`Homeworld: ${data["homeworld"]}`)
-                    $(".species").text(`Species: ${data["species"]}`)
-                    $(".mass").text(`Mass: ${data["mass"]}`)
-                    $(".height").text(`Height: ${data["height"]}`)
-                    $(".haircolor").text(`Haircolour: ${data["hairColor"]}`)
-                    $(".skincolor").text(`Skincolour: ${data["skinColor"]}`)
-                    $(".eyecolor").text(`Eyecolour: ${data["eyeColor"]}`)
-                    $(".photo").attr("src",data["image"])
-                })
-            })
-    })
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
